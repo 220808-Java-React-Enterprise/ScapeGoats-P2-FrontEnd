@@ -1,1 +1,1 @@
-# P2---ScapeGoats-FrontEnd
+# P2-ScapeGoats-FrontEnd
