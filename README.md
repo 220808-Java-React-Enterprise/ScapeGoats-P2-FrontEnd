@@ -42,7 +42,7 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 
 ## ERD
 
-![image](https://user-images.githubusercontent.com/37430000/189426944-0b9106b7-31d2-4fc5-bec7-2f55b44c7f37.png)
+![image](https://user-images.githubusercontent.com/37430000/189427203-20bd707c-d1ee-4160-ae58-bd3f4f0d7661.png)
 
 
 ### Usage
