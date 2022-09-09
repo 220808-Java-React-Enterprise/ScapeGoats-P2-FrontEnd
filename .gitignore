@@ -26,6 +26,7 @@ hs_err_pid*
 *.properties
 *.iml
 *.DS_Store
+*out/
 *target/
 
  # NOTE: Remember to remove  the *.war for the deploy branch. #
