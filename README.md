@@ -20,7 +20,7 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 
 * Users able to create an account and sign up - stored in the database
 * Questions in the database, broken up into categories users can ask 
-* Tarot Cards answers questions asked
+* Tarot Cards answers questions asked based on Question asked Category
 * Admin can delete and add users and consultants
 * Admin can edit consultants
 * Users can view their reading history
@@ -34,7 +34,7 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 * Users can share their cards on Social Media
 * Users can hire consultants
 * Save info of users hiring consultants
-* Review of Consultants
+* Reviews of Consultants
 
 
 ### Usage
