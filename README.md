@@ -17,7 +17,7 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 
 ## External API
 
-* https://generatorfun.com/tarot-card-api
+* [[https://generatorfun.com/tarot-card-api](https://app.swaggerhub.com/apis/ekswagger/rws-tarot_card_api/1.0.0)](https://rws-cards-api.herokuapp.com/)
 
 ## MVP
 
