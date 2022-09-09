@@ -38,6 +38,7 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 * Users can hire consultants
 * Save info of users hiring consultants
 * Reviews of Consultants
+* User can view reviews of consultants
 
 ## ERD
 
