@@ -7,9 +7,14 @@
 Life got you down?  Are you lost?  Not sure what move to make next?  With Tarot Card reading you can have access to a Psychic that will tell you your future and answer you most important life questions in your own home and no appointment needed.  With a click of a mouse you can learn more about your career, lovelife, pet's happiness, and anything else you are in search of.  Should you sell everything and move into the woods?  Buy a house you can't afford?  A psychic can make all these decisions easier.  
 With Reality Escape Cards, you can pull up previous readings to compare and make current choices.  Consultants are always online to help you cope with your impending death or poverty.
 
-## Team Lead
+## Team Members
 
-* Melissa Clark
+* Melissa Clark (Lead - Backend)
+* Jon mikael (Frontend)
+* Delane Green (Frontend)
+* David Burrington (Frontend)
+* John Nguyen (Backend)
+
 
 ## MVP
 
