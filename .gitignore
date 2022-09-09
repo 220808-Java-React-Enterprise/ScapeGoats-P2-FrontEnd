@@ -12,7 +12,6 @@
 
 # Package Files #
 *.jar
-*.war
 *.nar
 *.ear
 *.zip
@@ -24,7 +23,11 @@ hs_err_pid*
 
 # P2 added ignores.
 *.idea/
-*.out/
 *.properties
 *.iml
+*.DS_Store
+*target/
+
+ # NOTE: Remember to remove  the *.war for the deploy branch. #
+*.war
 
