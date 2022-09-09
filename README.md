@@ -15,6 +15,9 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 * David Burrington (Frontend)
 * John Nguyen (Backend)
 
+## External API
+
+* https://generatorfun.com/tarot-card-api
 
 ## MVP
 
