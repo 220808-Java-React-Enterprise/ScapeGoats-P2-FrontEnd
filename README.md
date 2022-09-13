@@ -1,4 +1,4 @@
-# P2-ScapeGoats-FrontEnd
+# P2-ScapeGoats-BackEnd
 
 # Reality Escape Cards (Tarot Cards) - Proposal
 
@@ -7,15 +7,23 @@
 Life got you down?  Are you lost?  Not sure what move to make next?  With Tarot Card reading you can have access to a Psychic that will tell you your future and answer you most important life questions in your own home and no appointment needed.  With a click of a mouse you can learn more about your career, lovelife, pet's happiness, and anything else you are in search of.  Should you sell everything and move into the woods?  Buy a house you can't afford?  A psychic can make all these decisions easier.  
 With Reality Escape Cards, you can pull up previous readings to compare and make current choices.  Consultants are always online to help you cope with your impending death or poverty.
 
-## Team Lead
+## Team Members
 
-* Melissa Clark
+* Melissa Clark (Lead - Backend)
+* Jon mikael (Frontend)
+* Delane Green (Frontend)
+* David Burrington (Frontend)
+* John Nguyen (Backend)
+
+## External API
+
+* https://rws-cards-api.herokuapp.com/
 
 ## MVP
 
 * Users able to create an account and sign up - stored in the database
 * Questions in the database, broken up into categories users can ask 
-* Tarot Cards answers questions asked
+* Tarot Cards answers questions asked based on Question asked Category
 * Admin can delete and add users and consultants
 * Admin can edit consultants
 * Users can view their reading history
@@ -29,7 +37,12 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 * Users can share their cards on Social Media
 * Users can hire consultants
 * Save info of users hiring consultants
-* Review of Consultants
+* Reviews of Consultants
+* User can view reviews of consultants
+
+## ERD
+
+![image](https://user-images.githubusercontent.com/37430000/189683846-a3a92923-5265-4183-a82c-1b860bf7f2fe.png)
 
 
 ### Usage
