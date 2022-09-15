@@ -4,12 +4,29 @@ import { useState } from "react";
 
 const Signup = () => {
 
-
-
     useEffect(() => {
         document.title = "Signup";
     }, []
     );
+
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    function updateEmail (event : any) {
+        setEmail(event.target.value);
+    }
+    function updateUsername (event : any) {
+        setUsername(event.target.value);
+    }
+    function updatePassword (event : any) {
+        setPassword(event.target.value);
+    }
+
+    const handleSubmit = (event : any) => {
+        event.preventDefault();
+        console.log(username, email, password);
+    }
 
 
     return (
@@ -22,19 +39,19 @@ const Signup = () => {
                 <h1 >Signup</h1>
                 <br/>
 
-                <form name='Signup'>
+                <form onSubmit={handleSubmit} name='Signup'>
                    
                     <div className="col-12 mb-3">
                         <label className="visually-hidden" htmlFor='email'>Email</label>
-                        <input className="form-control" id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>
+                        <input className="form-control" value={email} onChange={updateEmail} id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>
                     </div>
                     <div className="col-12 mb-3">
                         <label className="visually-hidden" htmlFor='username'>Username</label>
-                        <input className="form-control" id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>
+                        <input className="form-control" value={username} onChange={updateUsername} id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>
                     </div>
                     <div className="col-12 mb-3">
                         <label className='form-label' htmlFor='password'>Password</label>
-                        <input className="form-control" id='password' type='password' placeholder='Please enter a password.' required={true} tabIndex={3}/>
+                        <input className="form-control" value={password} onChange={updatePassword} id='password' type='password' placeholder='Please enter a password.' required={true} tabIndex={3}/>
                     
                     </div>
                 
