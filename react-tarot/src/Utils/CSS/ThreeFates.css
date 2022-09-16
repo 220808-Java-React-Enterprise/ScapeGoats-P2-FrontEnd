@@ -1,0 +1,53 @@
+
+
+.Main{
+    color: #000;
+    background-color: #aaa;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    padding: 0.5%;
+    border: 3px solid #555;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.Title{
+    color: #000;
+}
+
+.Sub-Title{
+    color: #000;
+}
+
+.Card-Div{
+    color: #000;
+    margin: auto;
+    padding: 0.5%;
+    border: 3px solid #555;
+}
+
+.Card{
+    color: #000;
+    margin: auto;
+    padding: 0.5%;
+    border: 3px solid #555;
+    box-sizing: border-box;
+}
+
+.Description{
+    color: #000;
+    margin: auto;
+    padding: 0.5%;
+    border: 3px solid #555;
+}
+
+.Navigation{
+    color: #000;
+    margin: auto;
+    padding: 0.5%;
+    border: 3px solid #555;
+}
+

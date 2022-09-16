@@ -1,0 +1,4 @@
+                     <div className="col-12 mb-3">
+                        <label className="visually-hidden" htmlFor='email'>Email</label>
+                        <input className="form-control" value={email} onChange={updateEmail} id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>
+                    </div>

@@ -1,8 +1,13 @@
 import axios from "axios";
-const InnerAxios = axios.create({
-    baseURL : "https://rws-cards-api.herokuapp.com/api/v1/cards",
-    headers : {
-        "Content-type" :"application/json"
+
+//Creating a connection constant to the api.
+const InnerAxios = axios.create(
+    {
+        //Melissa base waiting for dto agreement. //baseURL: "http://tarotcards-env.eba-sjeppasn.us-west-1.elasticbeanstalk.com/p2-scape-goats",
+        baseURL: "http://p2scapegoats-env.eba-rduyqz4i.us-west-1.elasticbeanstalk.com/p2-scape-goats",
+        headers: {"Content-type" : "application/json",
+        }
     }
-})
+) 
+
 export default InnerAxios;
