@@ -1,12 +1,12 @@
 import React from "react";
-import TAROT_API from "../Utils/Config/OutterAxios";
+import OuterAxios from "../Utils/Config/OuterAxios";
 import { useNavigate } from "react-router-dom";
 
 const CategoryPannel = () => {
 
     const navigate = useNavigate();
     function drawThree() {
-        TAROT_API.get('/random?n=3').then(resp => {
+        OuterAxios.get('/random?n=3').then(resp => {
             localStorage.setItem('cardsDrawn', JSON.stringify(resp.data.cards));
         })
     }

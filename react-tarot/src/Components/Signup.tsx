@@ -16,12 +16,16 @@ const Signup = () => {
     function submit(event : any) {
         event.preventDefault();
         InnerAxios.post('/users/signup', {
-            email : email,
+            //email : email,    Out for now maybe stretch.
             username : username,
             password : password
             
 
-        }).then(() => {
+        }).then((resp) => {
+
+            //WIP for getting the user ID.
+            //var userId = resp.data;
+            //console.log(userId);
 
             console.log(("Submited"));
 
@@ -32,13 +36,13 @@ const Signup = () => {
         })
     }
 
-    const [email, setEmail] = useState('');
+    //const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    function updateEmail (event : any) {
+    /*function updateEmail (event : any) {
         setEmail(event.target.value);
-    }
+    }*/
     function updateUsername (event : any) {
         setUsername(event.target.value);
     }
@@ -48,7 +52,7 @@ const Signup = () => {
 
     const handleSubmit = (event : any) => {
         event.preventDefault();
-        console.log(username, email, password);
+        console.log(username, password);
     }
 
 
@@ -62,12 +66,8 @@ const Signup = () => {
                 <h1 >Signup</h1>
                 <br/>
 
-                <form onSubmit={submit} name='Signup'>
-                   
-                    <div className="col-12 mb-3">
-                        <label className="visually-hidden" htmlFor='email'>Email</label>
-                        <input className="form-control" value={email} onChange={updateEmail} id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>
-                    </div>
+                <form onSubmit={submit} name='Signup'>                   
+                  
                     <div className="col-12 mb-3">
                         <label className="visually-hidden" htmlFor='username'>Username</label>
                         <input className="form-control" value={username} onChange={updateUsername} id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>

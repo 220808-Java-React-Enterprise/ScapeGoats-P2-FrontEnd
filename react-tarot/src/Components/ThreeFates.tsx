@@ -1,7 +1,7 @@
 import { json } from "node:stream/consumers";
 import React, { useEffect } from "react";
-import TAROT_API from "../Utils/Config/OutterAxios";
 import "../Utils/CSS/ThreeFates.css"
+import OuterAxios from "../Utils/Config/OuterAxios";
 
 
 const ThreeFates = () => {
