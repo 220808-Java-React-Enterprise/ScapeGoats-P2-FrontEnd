@@ -1,8 +1,7 @@
 import {useEffect} from "react";
 import { useState } from "react";
-import TAROT_API from "../Utils/Config/OutterAxios";
 import { useNavigation } from "react-router-dom"; 
-import SCAPE_GOATS_API from "../Utils/Config/InnerAxios";
+import InnerAxios from "../Utils/Config/InnerAxios";
 
 
 
@@ -16,7 +15,7 @@ const Signup = () => {
     
     function submit(event : any) {
         event.preventDefault();
-        SCAPE_GOATS_API.post('/users/signup', {
+        InnerAxios.post('/users/signup', {
             email : email,
             username : username,
             password : password
