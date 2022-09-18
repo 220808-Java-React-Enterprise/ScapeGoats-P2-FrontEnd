@@ -1,11 +1,13 @@
 import {useEffect} from "react";
 import { useState } from "react";
-import { useNavigation } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; 
 import InnerAxios from "../Utils/Config/InnerAxios";
 
 
 
 const Signup = () => {
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Signup";

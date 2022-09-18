@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const CategoryPannel = () => {
 
     const navigate = useNavigate();
+    
     function drawThree() {
         OuterAxios.get('/random?n=3').then(resp => {
             localStorage.setItem('cardsDrawn', JSON.stringify(resp.data.cards));
