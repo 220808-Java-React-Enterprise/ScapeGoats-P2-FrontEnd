@@ -1,8 +1,7 @@
 import {useEffect} from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; 
 import InnerAxios from "../Utils/Config/InnerAxios";
-import Button from "./Button";
 
 
 
@@ -12,8 +11,7 @@ const Signup = () => {
 
     useEffect(() => {
         document.title = "Signup";
-    }, []
-    );
+    });
 
     
     function submit(event : any) {
@@ -87,9 +85,6 @@ const Signup = () => {
                     </div>
                 </form>
            </div>
-<Link to="/">
-<Button text="Back"/>
-</Link>
 
 
         </div>
