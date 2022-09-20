@@ -45,10 +45,10 @@ const Signup = () => {
         setEmail(event.target.value);
     }*/
     function updateUsername (event : any) {
-        setUsername(event.target.value);
+        setUsername(event?.target?.value ?? ''); //Playing around with optional chaining.
     }
     function updatePassword (event : any) {
-        setPassword(event.target.value);
+        setPassword(event?.target?.value ?? '');
     }
 
     const handleSubmit = (event : any) => {
