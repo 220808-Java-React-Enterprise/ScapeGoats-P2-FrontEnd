@@ -81,7 +81,7 @@ const ThreeFates = () => {
     }
 
     const returnToMain = () => {
-        navigate('/');
+        navigate('/MainPage');
     }
     
 

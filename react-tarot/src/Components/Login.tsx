@@ -1,16 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InnerAxios from "../Utils/Config/InnerAxios";
-//import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 
 export default function Login() {
+
+    InnerAxios.interceptors.response.use(
+        (response) => {
+        console.log(response.request);
+        // Important: response interceptors **must** return the response.
+        return response;
+    }, function (error) {
+        // Any status codes that falls outside the range of 2xx cause this function to trigger
+        // Do something with response error
+        return Promise.reject(error);
+      });
     
     const [username, setUsername] = useState("");
     
     const [password, setPassword] = useState("");
     
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
 
     function updateUsername(event: any) {
         setUsername(event.target.value);
@@ -23,17 +33,17 @@ export default function Login() {
     function submitLogin(event: { preventDefault: () => void; }) {
         event.preventDefault();
 
-        InnerAxios.post("/users/login", {
+        InnerAxios.post("/auth/login", {
             username: username,
             password: password,
             
         })
             .then(() => {
                 alert("Login Successful!");
-                //navigate("/main");
+                navigate("/MainPage");
             })
             .catch((error: { response: { data: { message: any; }; }; }) => {
-                alert(error.response.data.message);
+                alert("Login Unsuccessful");
             });
 
         setUsername("");
@@ -60,6 +70,8 @@ export default function Login() {
                     
                         <button type="submit">Login</button>
                     </form>
+
+                    
                 </div>
             </body>
 
