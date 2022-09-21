@@ -26,12 +26,12 @@ function App() {
 
      <Route element={<PrivateRoutes/>}>
         <Route path="/MainPage" element={<MainPage/>}></Route>
+        <Route path="/Categ" element={<CategoryPannel/>}></Route>
+        <Route path="/Draw" element={<ThreeFates/>}></Route>
+        <Route path="/ReadingHistory" element={<ReadingHistory/>}></Route>
       </Route>
 
-     <Route path="/Categ" element={<CategoryPannel/>}></Route>
-      <Route path="/Draw" element={<ThreeFates/>}></Route>
-      
-      <Route path="/ReadingHistory" element={<ReadingHistory/>}></Route>
+     
 
      
           
