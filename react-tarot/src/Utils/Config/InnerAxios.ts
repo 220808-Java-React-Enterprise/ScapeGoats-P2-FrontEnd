@@ -4,10 +4,13 @@ import axios from "axios";
 const InnerAxios = axios.create(
     {
         //Melissa base waiting for dto agreement. //baseURL: "http://tarotcards-env.eba-sjeppasn.us-west-1.elasticbeanstalk.com/p2-scape-goats",
-        baseURL: "http://p2scapegoats-env.eba-rduyqz4i.us-west-1.elasticbeanstalk.com/p2-scape-goats",
+        baseURL: "http://tarotcards-env.eba-sjeppasn.us-west-1.elasticbeanstalk.com/p2-scape-goats",
         headers: {"Content-type" : "application/json",
-        }
+    
+}
     }
 ) 
+
+
 
 export default InnerAxios;
