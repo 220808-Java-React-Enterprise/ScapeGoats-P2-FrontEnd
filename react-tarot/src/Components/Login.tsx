@@ -5,9 +5,10 @@ import axios from "axios";
 
 export default function Login() {
 
+ 
     InnerAxios.interceptors.response.use(
-        (response) => {
-        console.log(response.request);
+        (response : any) => {
+        console.log(response);
         // Important: response interceptors **must** return the response.
         return response;
     }, function (error) {
@@ -38,7 +39,8 @@ export default function Login() {
             password: password,
             
         })
-            .then(() => {
+            .then((response) => {
+                window.localStorage.setItem("auth-token",response.headers["authorization"])
                 alert("Login Successful!");
                 navigate("/MainPage");
             })
