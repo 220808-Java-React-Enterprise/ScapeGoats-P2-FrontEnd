@@ -2,3 +2,54 @@
                         <label className="visually-hidden" htmlFor='email'>Email</label>
                         <input className="form-control" value={email} onChange={updateEmail} id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>
                     </div>
+
+/* The animation code */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+/* The element to apply the animation to */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+
+
+    transform: scaleX(-1);
+    transform: rotateY(100deg);
+
+
+
+    
+    0%{
+        transform: scaleX(-0.5) ;
+        opacity: 100%;
+        
+     }
+    25%{ 
+        transform: rotateY(360deg);
+        opacity: 0%;
+
+    }
+    50%{
+        
+        transform: scaleX(-0.5) ;
+        opacity: 50%;
+    }
+    75%{
+        transform: rotateY(180deg);
+        opacity: 0%;
+
+    }
+    100%{
+
+        transform: initial;
+        opacity: 100%;
+        
+
+    }

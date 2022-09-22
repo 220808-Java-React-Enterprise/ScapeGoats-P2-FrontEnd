@@ -1,4 +1,10 @@
+div{
+    display: block;
+    text-align: center;
+    background-color: rgb(136, 125, 177);
+    
 
+}
 
 .Main{
     color: #000;
@@ -29,33 +35,63 @@
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
-    height: 310px;
+    height: fit-content;
 }
 
 #Card-Image-Single{
     background-color: rgb(170, 136, 161);
 }
+#Card-Image-Single:hover .Card-Back{
+    flex-shrink: calc(12);
+}
 
 #Card-Image{
     display: flex;
     flex-direction: row;
-    margin-left: 1%;
-    background-color: aliceblue;
-    width: 25%;
+    margin: auto;
+    width: 282px;
     height: fit-content;
 }
 
 .Card-Info{
+    opacity: 0%;
     color: #000;
-    float: left;
-    margin-left: 2%;
-    margin: auto;
-    padding: 0.5%;
+    float: none;
+    margin-left: -88%;
     border: 3px solid #555;
     box-sizing: border-box;
-    opacity: 60%;
-    width: 36%;
-    height: min-content;
+    height: 400px;
+    width: inherit;
+}
+.Card-Info:hover{
+    opacity: 0%;
+    color: #000;
+    float: none;
+    margin-left: -88%;
+    border: 3px solid #555;
+    box-sizing: border-box;
+    height: 400px;
+    width: inherit;
+}
+
+#ImgC1{
+    float: left;
+    background-color: aquamarine;
+    animation-name: card-deal;
+    animation-duration: 2s;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+
+}
+#ImgC2{
+    float: left;
+    background-color: aquamarine;
+
+}
+#ImgC3{
+    float: left;
+    background-color: aquamarine;
+
 }
 
 #C1{
@@ -75,9 +111,23 @@
 .Img-Cards{
     float: left;
     display: flexbox;
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 282px;
+    box-shadow: 10px 5px 5px grey;
+    background-color: #000;
 }
+.Img-Cards:hover{
+    backdrop-filter: black;
+    animation-name: card-ani;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;
+    
+}
+.Img-Cards:before{
+    backdrop-filter: black;
+    animation-name: card-drop;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;}
 
 
 .Description{
@@ -94,5 +144,52 @@
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
+}
+
+.Cate-Button{
+    background-color: cornflowerblue;
+}
+
+.Card-Back{
+    background-image: url('../../Resources/Images/Cards/cd-back-ghost.jpg');
+    width: 200px;
+    height: 300px;
+}
+
+/*KEYFRAMES*/
+@keyframes card-ani{
+    0%{
+        transform: rotateY(360deg) scale(1);
+    }
+    25%{}
+    50%{
+        opacity: 0%;
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url('cd-back-ghost.jpg') no-repeat;
+    }
+    75%{}
+    100%{
+        transform: initial;
+    }
+}
+@keyframes card-drop{
+    0%{
+        transform: rotateY(360deg) scale(1);
+    }
+    100%{
+        transform: initial;
+    }
+
+}
+@keyframes card-deal{
+    0%{        
+        transform: translate(260%, -150%);
+    }
+    100%{
+        transform: initial;
+    }
+
 }
 

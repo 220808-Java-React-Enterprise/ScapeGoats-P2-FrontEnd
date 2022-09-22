@@ -22,9 +22,9 @@ const ThreeFates = () => {
         cards = JSON.parse(localStorage.cardsDrawn);
         
         description = 'In the category of ' + category.name +
-            ' the first card tells ' + category.meanings[0] + 
-            ' The second card tells ' + category.meanings[1] + 
-            ' While the third and final card tells ' + category.meanings[2];
+            ' the first card shows ' + category.meanings[0] + 
+            ' The second card shows ' + category.meanings[1] + 
+            ' While the third and final card shows ' + category.meanings[2];
             
             
             //For testing console.log(counter);
@@ -111,13 +111,13 @@ const ThreeFates = () => {
         let card3 = JSON.stringify(cards[2]);
         //console.log( description);
 
-        InnerAxios.post('/Readings', {
+        InnerAxios.post('/readings', {
             user_id: "6cf487f7-009d-46c5-8b6f-051d98fee547",
-            card1: 'card', //cards[0].name_short,
-            card2: 'card', //cards[1].name_short,
-            card3: 'card', //cards[2].name_short,
-            description: 'This is a reading', //description,
-            category: 'LOVE'//category.id
+            card1: 'card', 
+            card2: 'card', 
+            card3: 'card', 
+            description: 'This is a reading', 
+            category: 'LOVE'
     
         }).then(() => {
             alert('Reading saved!\nYou can view it in your reading history. (^u^)');
@@ -145,19 +145,19 @@ const ThreeFates = () => {
                         <div id='Card-Image-Single'>
                             <img id="ImgC1" className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C1'>Card 1</span>
+                        <span className="Card-Info" id='C1'>Card 1</span>
                     </div>
                     <div id="Card-Image">
                         <div id='Card-Image-Single'>
                             <img id='ImgC2' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C2'>Card 2</span>
+                        <span className="Card-Info" id='C2'>Card 2</span>
                     </div>
                     <div id="Card-Image">
                         <div id='Card-Image-Single'>
                             <img id='ImgC3' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C3'>Card 3</span>
+                        <span className="Card-Info" id='C3'>Card 3</span>
                     </div>
                 </div>
                 <div className="Description" id="Description">Desc</div>
