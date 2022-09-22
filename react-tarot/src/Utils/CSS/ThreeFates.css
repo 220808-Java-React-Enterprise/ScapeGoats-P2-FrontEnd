@@ -23,25 +23,70 @@
 }
 
 .Card-Div{
+    display: flex;
+    flex-direction: row;
     color: #000;
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
+    height: 310px;
 }
 
-.Card{
+#Card-Image-Single{
+    background-color: rgb(170, 136, 161);
+}
+
+#Card-Image{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    background-color: aliceblue;
+    width: 25%;
+    height: fit-content;
+}
+
+.Card-Info{
     color: #000;
+    float: left;
+    margin-left: 2%;
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
     box-sizing: border-box;
+    opacity: 60%;
+    width: 36%;
+    height: min-content;
 }
 
+#C1{
+    float: left;
+    background-color: aquamarine;
+
+}
+#C2{
+    float: left;
+    background-color: aquamarine;
+}
+#C3{
+    float: right;
+    background-color: turquoise;
+}
+
+.Img-Cards{
+    float: left;
+    display: flexbox;
+    height: 300px;
+    width: 200px;
+}
+
+
 .Description{
+    margin-top: 100%;
     color: #000;
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
+
 }
 
 .Navigation{

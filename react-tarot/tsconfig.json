@@ -18,9 +18,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    //DELG ADDED****
+    //"target": "ES2020",
+
   },
+  //DELG ADDED*****
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
+  "include": ["src", "index.d.ts"]
+
+
+  /*DELG REMOVED***
   "include": [
     "src"
-  ]
+  ]*/
 }

@@ -1,20 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import InnerAxios from "../Utils/Config/InnerAxios";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login() {
-
-    InnerAxios.interceptors.response.use(
-        (response) => {
-        console.log(response.request);
-        // Important: response interceptors **must** return the response.
-        return response;
-    }, function (error) {
-        // Any status codes that falls outside the range of 2xx cause this function to trigger
-        // Do something with response error
-        return Promise.reject(error);
-      });
     
     const [username, setUsername] = useState("");
     
@@ -40,10 +30,11 @@ export default function Login() {
         })
             .then(() => {
                 alert("Login Successful!");
-                navigate("/MainPage");
+                navigate('/MainPage');
+            
             })
             .catch((error: { response: { data: { message: any; }; }; }) => {
-                alert("Login Unsuccessful");
+                alert(error.response.data.message);
             });
 
         setUsername("");
@@ -53,27 +44,23 @@ export default function Login() {
 
     return (
         <>
-            <body>
-                <div>
-                    <div className="background">
-                        <div className="shape"></div>
-                        <div className="shape"></div>
-                    </div>
-                    <form onSubmit={submitLogin}>
-                        <h3>Welcome Back</h3>
-                        <label htmlFor="username">Username</label>
-                        <input type="text" placeholder="Username" id="username" value={username} onChange={updateUsername}/>
-
-                        <label htmlFor="password">Password</label>
-                        <input type="password" placeholder="Password" id="password" value={password} onChange={updatePassword}/>
-
-                    
-                        <button type="submit">Login</button>
-                    </form>
-
-                    
+            <div>
+                <div className="background">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
                 </div>
-            </body>
+                <form onSubmit={submitLogin}>
+                    <h3>Welcome Back</h3>
+                    <label htmlFor="username">Username</label>
+                    <input type="text" placeholder="Username" id="username" value={username} onChange={updateUsername}/>
+
+                    <label htmlFor="password">Password</label>
+                    <input type="password" placeholder="Password" id="password" value={password} onChange={updatePassword}/>
+
+                
+                    <button type="submit">Login</button>
+                </form>
+            </div>
 
             <Link to="/">Back to Landing Page</Link>
         </>

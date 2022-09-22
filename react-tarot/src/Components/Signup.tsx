@@ -1,9 +1,7 @@
 import {useEffect} from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; 
 import InnerAxios from "../Utils/Config/InnerAxios";
-import Button from "./Button";
-import axios from "axios";
 
 
 
@@ -14,7 +12,11 @@ const Signup = () => {
     useEffect(() => {
         document.title = "Signup";
     });
- 
+
+    //const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    
     function submit(event : any) {
         event.preventDefault();
         InnerAxios.post('/users/signup', {
@@ -25,24 +27,26 @@ const Signup = () => {
 
         }).then((resp) => {
 
-            //WIP for getting the user ID.
-            //var userId = resp.data;
-            //console.log(userId);
-
-            console.log(("Submited"));
+            //ForTesting --> console.log(("Submited\nUser id: " + resp.data));
+            //alert('Welcome!');
+            alert('Signup successful!')
+            navigate('/Login');
 
         }).catch(error => {
 
-            console.log(error.resoponse.data.message);
+            console.log(error?.resoponse?.data?.message ?? 'No error message found.');
+            alert(error?.resoponse?.data?.message ?? 'Username must be between 3 and 15 charaters.\nPassword must be at least 8 charaters and contain at least one; upper case letter, lower case letter, number, and a symbol.\nPlease try again!');
 
         })
+
+        //resetting username and password.
+        setUsername('');
+        setPassword('');
     }
 
-    //const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
 
-    /*function updateEmail (event : any) {
+    /*Removed to match backend dto
+    function updateEmail (event : any) {
         setEmail(event.target.value);
     }*/
     function updateUsername (event : any) {
@@ -52,17 +56,10 @@ const Signup = () => {
         setPassword(event?.target?.value ?? '');
     }
 
-    const handleSubmit = (event : any) => {
-        event.preventDefault();
-        console.log(username, password);
-    }
-
-
     return (
 
         <div>
 
-            {/* TODO: request user signup post uri from backend, and place in action prop. */}
            <div className="row-auto justify-content-center mb-5" >
 
                 <h1 >Signup</h1>
@@ -86,9 +83,7 @@ const Signup = () => {
                     </div>
                 </form>
            </div>
-<Link to="/">
-           <Button text="Back"/>
-           </Link>
+
 
         </div>
 
