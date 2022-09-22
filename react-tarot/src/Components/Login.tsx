@@ -4,8 +4,18 @@ import InnerAxios from "../Utils/Config/InnerAxios";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Login() {
-    
+ 
+    InnerAxios.interceptors.response.use(
+        (response : any) => {
+        console.log(response);
+        // Important: response interceptors **must** return the response.
+        return response;
+    }, function (error) {
+        // Any status codes that falls outside the range of 2xx cause this function to trigger
+        // Do something with response error
+        return Promise.reject(error);
+      });
+      export default function Login() {    
     const [username, setUsername] = useState("");
     
     const [password, setPassword] = useState("");
@@ -28,7 +38,8 @@ export default function Login() {
             password: password,
             
         })
-            .then(() => {
+            .then((response) => {
+                window.localStorage.setItem("auth-token",response.headers["authorization"])
                 alert("Login Successful!");
                 navigate('/MainPage');
             
