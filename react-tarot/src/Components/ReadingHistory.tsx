@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 import InnerAxios from '../Utils/Config/InnerAxios'
 import { Link } from "react-router-dom";
-import OuterAxios from '../Utils/Config/OuterAxios';
 
 
 const ReadingHistory = () => {
 
-  const [counter,setCounter] = useState(0);
   const [userId, setUserId] = useState("8dab77eb-2689-4b89-bc39-aa104095ec61");
-  const [cardName, setCardName] = useState('Mystery Card');
+
 
   
   useEffect(() => {
@@ -17,11 +15,23 @@ const ReadingHistory = () => {
 
   }, [])
 
+  const getUserId = (() => {
+    let userId = localStorage?.user ?? "8dab77eb-2689-4b89-bc39-aa104095ec61";
+    if( userId !== null && userId !== undefined) {
+      return( userId )
+    }
+    else{
+      console.error("404: userId not found in local storage.");
+      return( "" )
+      
+    }
+  })
+
   async function loadReadings() {
     //event.preventDefault();
     await InnerAxios.get('/readings/byid', {
       params: {
-        userid: "8dab77eb-2689-4b89-bc39-aa104095ec61"
+        userid: getUserId()
       }
 
     }).then(response => {
@@ -92,7 +102,6 @@ const ReadingHistory = () => {
       <tfoot></tfoot>
 
     </table>
-
 
     <Link to="/MainPage">Back to MainPage</Link>
     </>

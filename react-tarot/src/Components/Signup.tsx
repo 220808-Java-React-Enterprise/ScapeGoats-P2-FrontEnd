@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 import InnerAxios from "../Utils/Config/InnerAxios";
 import '../Utils/CSS/Signup.css'
 
@@ -62,24 +62,27 @@ const Signup = () => {
 
            <div className="Signup" id="Signup-Div-Main">
            <video src={require('../Assets/NatureMoon.mp4')} autoPlay loop muted />
-                <h1 >Signup</h1>
+                <h1 >Create Account</h1>
                 <br/>
 
                 <form className="Signup" id="Signup-Form" onSubmit={submit} name='Signup'>                   
                   
                     <div className="Signup-Div-Inner">
                         <label className="Signup-Label" htmlFor='username'>Username</label>
-                        <input className="Signup-Input" value={username} onChange={updateUsername} id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>
+                        <input className="Signup-Input" value={username} onChange={updateUsername} id='username' type='text' placeholder='Enter a username.' required={true} tabIndex={2}/>
                     </div>
                     <div className="Signup-Div-Inner">
                         <label className='Signup-Label' htmlFor='password'>Password</label>
-                        <input className="Signup-Input" value={password} onChange={updatePassword} id='password' type='password' placeholder='Please enter a password.' required={true} tabIndex={3}/>
+                        <input className="Signup-Input" value={password} onChange={updatePassword} id='password' type='password' placeholder='Enter a password.' required={true} tabIndex={3}/>
                     
                     </div>
                 
                     <div className="Signup-Div-Inner">
                         <br/>
                         <input className="Signup-Button" id='signupSubmit' type='submit' value='Signup!' tabIndex={4} accessKey='enter'/>
+                        <br/>
+                        <Link to="/">Back to Landing Page</Link>
+                        <br/>
                     </div>
                 </form>
            </div>

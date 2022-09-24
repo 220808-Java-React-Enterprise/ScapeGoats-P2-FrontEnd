@@ -28,7 +28,7 @@ const ThreeFates = () => {
             ' The second card shows ' + category.meanings[1] + 
             ' While the third and final card shows ' + category.meanings[2];
             
-          
+            
             //For testing console.log(counter);
 
         if(counter != 0) { setCounter((counter) => counter - 1); }
@@ -94,7 +94,7 @@ const ThreeFates = () => {
     }
 
     function displayCardDescription() {
-      
+        
         var desc = document.getElementById('Description');
             
         if(desc != null) {
@@ -105,12 +105,25 @@ const ThreeFates = () => {
         }
 
     }
+    
+
+    const getUserId = (() => {
+        let userId = localStorage?.user ?? "8dab77eb-2689-4b89-bc39-aa104095ec61";
+        if( userId !== null && userId !== undefined) {
+        return( userId )
+        }
+        else{
+        console.error("404: userId not found in local storage.");
+        return( "" )
+        
+        }
+    })
 
     function saveReading(event: any) {
         event.preventDefault();
 
         InnerAxios.post('/readings', {
-            user_id : "6cf487f7-009d-46c5-8b6f-051d98fee547",
+            user_id : getUserId(),
             card1 : cards[0].name, 
             card2 : cards[1].name, 
             card3 : cards[2].name, 

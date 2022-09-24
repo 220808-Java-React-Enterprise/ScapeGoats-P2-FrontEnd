@@ -11,6 +11,7 @@
 .Signup{
     margin: auto;
 }
+
 #Signup-Div-Master{
     margin: auto;
 
@@ -19,7 +20,26 @@
     margin: auto;
 
 }
+#Signup-Div-Inner{
+    display: flex;
+    flex-direction: column;
+}
 #Signup-Form{
+    display: flex;
+    flex-direction: column;
     margin: auto;
 
+}
+.Signup-Label{
+    visibility: hidden;
+}
+.Signup-Input{
+    width: 100%;
+    margin: auto;
+    margin-top: -1%;
+}
+.Signup-Button{
+    width: 162%;
+    margin-left: -30%;
+    margin-bottom: 10%;
 }
