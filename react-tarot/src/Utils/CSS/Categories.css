@@ -1,0 +1,69 @@
+
+.Pannel{
+    display: block;
+    background-color: lightslategrey;
+    margin: auto;
+    margin-top: 1%;
+    padding: 1%;
+    width: 500px;
+    height: 500px;
+}
+
+.Cate-Title{
+    display: contents;
+    background-color: inherit;
+    margin: auto;
+    width: fit-content;
+}
+
+.Selection{
+    display: block;
+    margin: auto;
+    width: fit-content;
+}
+
+
+.Selection-Inner{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.Selection-Submit{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.Cate-Button{
+    background-color: azure;
+    color: indigo;
+    margin: 1px;
+    width: 100px;
+}
+.Cate-Button:hover{
+    background-color: initial;
+    color: azure;
+}
+
+.Cate-Button-Submit{
+    margin: 0.5%;
+    height: 30px;
+    width: 100px;
+}
+.Cate-Button-Submi:hover{
+    display: block;
+}
+.Cate-Button-Submit{
+    display: block;
+}
+
+
+/*ANIMATIONS*/
+
+
+
+

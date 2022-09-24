@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "../Utils/CSS/ThreeFates.css"
 import { useNavigate } from "react-router-dom";
 import InnerAxios from "../Utils/Config/InnerAxios";
+import User from "../Classes/User";
 
 
 const ThreeFates = () => {
@@ -11,7 +12,8 @@ const ThreeFates = () => {
     var cards:any;
     var category:any  = JSON.parse(localStorage.category);
     var description:string ;
-   
+    //const USER = new User(localStorage.user.id, localStorage.user.username, localStorage.user.role);
+
     const [counter, setCounter] = useState(2);
 
     useEffect(() => {
@@ -22,9 +24,9 @@ const ThreeFates = () => {
         cards = JSON.parse(localStorage.cardsDrawn);
         
         description = 'In the category of ' + category.name +
-            ' the first card tells ' + category.meanings[0] + 
-            ' The second card tells ' + category.meanings[1] + 
-            ' While the third and final card tells ' + category.meanings[2];
+            ' the first card shows ' + category.meanings[0] + 
+            ' The second card shows ' + category.meanings[1] + 
+            ' While the third and final card shows ' + category.meanings[2];
             
           
             //For testing console.log(counter);
@@ -71,7 +73,7 @@ const ThreeFates = () => {
 
             if(card != null) { 
                 card.innerHTML= '<h4>' + c.name + '</h4>\n' +
-                                '<h6>' + c.type + '</h6>\n' +
+                                '<h5>' + c.type + '</h5>\n' +
                                 '<p>' + meanings + '</p>';
 
                 
@@ -104,20 +106,16 @@ const ThreeFates = () => {
 
     }
 
-    const saveReading = (event: any) => {
+    function saveReading(event: any) {
         event.preventDefault();
-        let card1 = JSON.stringify(cards[0]);
-        let card2 = JSON.stringify(cards[1]);
-        let card3 = JSON.stringify(cards[2]);
-        //console.log( description);
 
-        InnerAxios.post('/Readings', {
-            user_id: "6cf487f7-009d-46c5-8b6f-051d98fee547",
-            card1: 'card', //cards[0].name_short,
-            card2: 'card', //cards[1].name_short,
-            card3: 'card', //cards[2].name_short,
-            description: 'This is a reading', //description,
-            category: 'LOVE'//category.id
+        InnerAxios.post('/readings', {
+            user_id : "6cf487f7-009d-46c5-8b6f-051d98fee547",
+            card1 : cards[0].name, 
+            card2 : cards[1].name, 
+            card3 : cards[2].name, 
+            description : description, 
+            category : category.id
     
         }).then(() => {
             alert('Reading saved!\nYou can view it in your reading history. (^u^)');
@@ -125,6 +123,7 @@ const ThreeFates = () => {
             
         }).catch( error => {
             alert(error?.response?.data?.message ?? 'Oops! Something went wrong. (>u>\')');
+            console.log(error.response.data.message);
         
         })
 
@@ -139,25 +138,25 @@ const ThreeFates = () => {
         <div onClick={placeCard}>
             <div className="Main">
                 <div className="Title">Your Three Fates Reading</div>
-                <div className="Sub-Title">Subtitle</div>
+                <div className="Sub-Title">{category.id}</div>
                 <div className="Card-Div">
                     <div id="Card-Image">
+                        <span className="Card-Info" id='C1'>Card 1</span>
                         <div id='Card-Image-Single'>
                             <img id="ImgC1" className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C1'>Card 1</span>
                     </div>
                     <div id="Card-Image">
+                        <span className="Card-Info" id='C2'>Card 2</span>
                         <div id='Card-Image-Single'>
                             <img id='ImgC2' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C2'>Card 2</span>
                     </div>
                     <div id="Card-Image">
+                        <span className="Card-Info" id='C3'>Card 3</span>
                         <div id='Card-Image-Single'>
                             <img id='ImgC3' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
-                        <span className="Card-IInfo" id='C3'>Card 3</span>
                     </div>
                 </div>
                 <div className="Description" id="Description">Desc</div>

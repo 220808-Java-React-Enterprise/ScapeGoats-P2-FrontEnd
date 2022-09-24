@@ -58,28 +58,28 @@ const Signup = () => {
 
     return (
 
-        <div>
+        <div className="Signup" id="Signup-Div-Master">
 
-           <div className="row-auto justify-content-center mb-5" >
+           <div className="Signup" id="Signup-Div-Main">
 
                 <h1 >Signup</h1>
                 <br/>
 
-                <form onSubmit={submit} name='Signup'>                   
+                <form className="Signup" id="Signup-Form" onSubmit={submit} name='Signup'>                   
                   
-                    <div className="col-12 mb-3">
-                        <label className="visually-hidden" htmlFor='username'>Username</label>
-                        <input className="form-control" value={username} onChange={updateUsername} id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>
+                    <div className="Signup-Div-Inner">
+                        <label className="Signup-Label" htmlFor='username'>Username</label>
+                        <input className="Signup-Input" value={username} onChange={updateUsername} id='username' type='text' placeholder='Please enter a username.' required={true} tabIndex={2}/>
                     </div>
-                    <div className="col-12 mb-3">
-                        <label className='form-label' htmlFor='password'>Password</label>
-                        <input className="form-control" value={password} onChange={updatePassword} id='password' type='password' placeholder='Please enter a password.' required={true} tabIndex={3}/>
+                    <div className="Signup-Div-Inner">
+                        <label className='Signup-Label' htmlFor='password'>Password</label>
+                        <input className="Signup-Input" value={password} onChange={updatePassword} id='password' type='password' placeholder='Please enter a password.' required={true} tabIndex={3}/>
                     
                     </div>
                 
-                    <div className="col-12 mb-3">
+                    <div className="Signup-Div-Inner">
                         <br/>
-                        <input className="form-control" id='signupSubmit' type='submit' value='Signup!' tabIndex={4} accessKey='enter'/>
+                        <input className="Signup-Button" id='signupSubmit' type='submit' value='Signup!' tabIndex={4} accessKey='enter'/>
                     </div>
                 </form>
            </div>
