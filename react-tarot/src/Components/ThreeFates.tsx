@@ -28,7 +28,7 @@ const ThreeFates = () => {
             ' The second card shows ' + category.meanings[1] + 
             ' While the third and final card shows ' + category.meanings[2];
             
-            
+          
             //For testing console.log(counter);
 
         if(counter != 0) { setCounter((counter) => counter - 1); }
@@ -94,7 +94,7 @@ const ThreeFates = () => {
     }
 
     function displayCardDescription() {
-        
+      
         var desc = document.getElementById('Description');
             
         if(desc != null) {

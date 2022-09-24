@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import InnerAxios from "../Utils/Config/InnerAxios";
 import { useNavigate } from "react-router-dom";
-
+import MoonWater from '../Assets/MoonWater.gif'
+import '../Utils/CSS/Login.css'
 
  
     InnerAxios.interceptors.response.use(
@@ -39,7 +40,10 @@ import { useNavigate } from "react-router-dom";
             
         })
             .then((response) => {
-                window.localStorage.setItem("auth-token",response.headers["authorization"])
+                let user = { ...response.data };
+                window.sessionStorage.setItem("user", JSON.stringify(user));
+                window.sessionStorage.setItem("auth-token",response.headers["authorization"])
+                localStorage.setItem("user",response.data.id)
                 alert("Login Successful!");
                 navigate('/MainPage');
             
@@ -55,11 +59,11 @@ import { useNavigate } from "react-router-dom";
 
     return (
         <>
-            <div>
-                <div className="background">
-                    <div className="shape"></div>
-                    <div className="shape"></div>
-                </div>
+         <div className='backVid' >
+      <img src={require('../Assets/MoonWater.gif')} />
+      </div>
+            <div className ="Log">
+          
                 <form onSubmit={submitLogin}>
                     <h3>Welcome Back</h3>
                     <label htmlFor="username">Username</label>
@@ -70,10 +74,14 @@ import { useNavigate } from "react-router-dom";
 
                 
                     <button type="submit">Login</button>
-                </form>
+                    <br></br>
+                    <div className="linked">
+                    <Link to="/">Back to Landing Page</Link>
+                    </div>
+           
+                </form> 
             </div>
-
-            <Link to="/">Back to Landing Page</Link>
+           
         </>
     );
 

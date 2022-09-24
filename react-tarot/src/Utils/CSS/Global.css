@@ -10,7 +10,7 @@ div{
     margin: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    background-color: rgb(136, 125, 177);
+ 
 }
 
 span{
@@ -71,9 +71,6 @@ table{
     animation: pluse-slow 4s;
 }
 
-#Main-Window{
-
-}
 
 /*ANIMATIONS*/
 
