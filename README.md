@@ -23,8 +23,8 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 ## MVP
 
 * Users able to create an account and sign up - stored in the database
-* Questions in the database, broken up into categories users can ask 
-* Tarot Cards answers questions asked based on Question asked Category
+* User can select categories to receive readings based on 
+* Tarot Cards give readings based on category selected
 * Admin can delete and add users and consultants
 * Admin can edit consultants
 * Users can view their reading history
@@ -52,7 +52,12 @@ With Reality Escape Cards, you can pull up previous readings to compare and make
 
 ### Usage
 
-Upon visiting our site, a user will be prompted to either sign up or login. A user can sign up by providing an email and creating a username and password. Once the account is created they will be able to login with those credentials. Once logged in a user can choose to receive a tarot reading by selecting a question category and a related question from that category that they would like to receive a reading for. The user will then receive three tarot cards as their reading which possess various meanings. The user can then either choose to save or discard their reading. If saved the user can then view that reading in their reading history where all saved readings are stored. The user also has the ability to change their login credentials. Users can also request a consultation with a third-party consultant if they wish to discuss their reading.
+Upon visiting our site, a user will be prompted to either sign up or login. A user can sign up by providing an email and creating a username and password. Once the account is created they will be able to login with those credentials. Once logged in a user can choose to receive a tarot reading by selecting a category that they would like to receive a reading for. The user will then receive three tarot cards as their reading which possess various meanings. The user can then either choose to save or discard their reading. If saved the user can then view that reading in their reading history where all saved readings are stored. Users can also request a consultation with a third-party consultant if they wish to discuss their reading.
+
+### Project Management
+
+* Agile Methodology
+* Trello
 
 ### Technology
 
@@ -69,6 +74,7 @@ Upon visiting our site, a user will be prompted to either sign up or login. A us
 * Java Web Tokens
 * Junit
 * Mockito
+* Lucid Charts
 
 ### Roles
 
