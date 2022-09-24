@@ -11,7 +11,7 @@ const ThreeFates = () => {
     var cards:any;
     var category:any  = JSON.parse(localStorage.category);
     var description:string ;
-
+   
     const [counter, setCounter] = useState(2);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const ThreeFates = () => {
             ' The second card tells ' + category.meanings[1] + 
             ' While the third and final card tells ' + category.meanings[2];
             
-            
+          
             //For testing console.log(counter);
 
         if(counter != 0) { setCounter((counter) => counter - 1); }
@@ -92,7 +92,7 @@ const ThreeFates = () => {
     }
 
     function displayCardDescription() {
-        
+      
         var desc = document.getElementById('Description');
             
         if(desc != null) {
