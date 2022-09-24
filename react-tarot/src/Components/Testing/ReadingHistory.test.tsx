@@ -1,7 +1,6 @@
 import ReadingHistory from "../ReadingHistory";
 import { getByText, render, screen } from '@testing-library/react';
-import React from 'react';
-import { MemoryRouter, Route, Router, Routes } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 //The tests.
 test('Test Reading table is visable', () => {
@@ -12,8 +11,8 @@ test('Test Reading table is visable', () => {
             </Routes>
         </MemoryRouter>
     );
-    const readingTable = screen.getByRole('test');
-    expect(readingTable).toBeVisible();
+    const readingTable = document.querySelector('table');//screen.findByRole('table', {name:'testertable'});
+    expect(readingTable).toBeInTheDocument();
 
 });
 

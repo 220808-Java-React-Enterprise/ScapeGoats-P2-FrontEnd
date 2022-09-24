@@ -16,7 +16,7 @@ const ReadingHistory = () => {
   }, [])
 
   const getUserId = (() => {
-    let userId = localStorage?.userId ?? "8dab77eb-2689-4b89-bc39-aa104095ec61";
+    let userId = localStorage?.user ?? "8dab77eb-2689-4b89-bc39-aa104095ec61";
     if( userId !== null && userId !== undefined) {
       return( userId )
     }
@@ -31,7 +31,7 @@ const ReadingHistory = () => {
     //event.preventDefault();
     await InnerAxios.get('/readings/byid', {
       params: {
-        userid: "8dab77eb-2689-4b89-bc39-aa104095ec61"
+        userid: getUserId()
       }
 
     }).then(response => {
@@ -85,7 +85,7 @@ const ReadingHistory = () => {
       //<input type='submit' value='Category'/>
       }
     </div>
-    <table role='test' id='Reading-Table'>
+    <table id='Reading-Table'>
       <caption>Reading History</caption>
       <thead>
         <tr>
@@ -102,7 +102,6 @@ const ReadingHistory = () => {
       <tfoot></tfoot>
 
     </table>
-      Tarot
 
     <Link to="/MainPage">Back to MainPage</Link>
     </>
