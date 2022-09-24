@@ -1,3 +1,11 @@
+
+    <!--BOOTSTRAP LINK (a css library)-->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+              
+                     
+                     
                      <div className="col-12 mb-3">
                         <label className="visually-hidden" htmlFor='email'>Email</label>
                         <input className="form-control" value={email} onChange={updateEmail} id='email' type='email' placeholder='Please enter a valid email.' required={true} tabIndex={1}/>

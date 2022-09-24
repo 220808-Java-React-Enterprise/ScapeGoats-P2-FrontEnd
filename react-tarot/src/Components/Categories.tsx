@@ -1,8 +1,8 @@
-import React, { MouseEvent, TouchEvent, KeyboardEvent, useEffect, useState } from "react";
+import { MouseEvent, TouchEvent, KeyboardEvent, useEffect, useState } from "react";
 import OuterAxios from "../Utils/Config/OuterAxios";
 import { useNavigate } from "react-router-dom";
 import Category from "../Classes/Category";
-import Reading from "../Classes/Reading";
+import '../Utils/CSS/Categories.css';
 
 
 
@@ -30,21 +30,36 @@ const CategoryPannel = () => {
 
     const setCategoryFuture = () => {
         category = cate_future;
+        setSubTitle(category.getId())
+
     }
     const setCategoryLove = () => {
         category = cate_love;
+        setSubTitle(category.getId())
     }
     const setCategoryHorizons = () => {
         category = cate_horizons;
+        setSubTitle(category.getId())
     }
     const setCategoryCareer = () => {
         category = cate_career;
+        setSubTitle(category.getId())
     }
     const setCategoryHappiness = () => {
         category = cate_happiness;
+        setSubTitle(category.getId())
     }
     const setCategoryPets = () => {
         category = cate_pets;
+        setSubTitle(category.getId())
+    }
+
+    function setSubTitle(cate: string) {
+        let subTitle = document.getElementById('Cate-SubTitle')
+
+        if(subTitle !== null) {
+            subTitle.innerHTML = cate;
+        }
     }
 
     function drawThree() {
@@ -67,12 +82,12 @@ const CategoryPannel = () => {
     return(
         <div className="Pannel">
 
-            <div className="Title">
+            <div className="Cate-Title">
                 <h1>Categories</h1>
-                <h3>Choose a Category!</h3>
+                <h3 id="Cate-SubTitle">Choose a Category!</h3>
             </div>
             <div className="Selection">
-                <div>
+                <div className='Selection-Inner'>
                     <input className='Cate-Button' type={'submit'} value='Future' onClick={setCategoryFuture}/>
                     <input className='Cate-Button' type={'submit'} value='Love' onClick={setCategoryLove}/>
                     <input className='Cate-Button' type={'submit'} value='Horizons' onClick={setCategoryHorizons}/>
@@ -82,8 +97,8 @@ const CategoryPannel = () => {
                 </div>
             </div>
 
-            <div className="Submit">
-                    <input type={'submit'} value='Divine' onMouseDown={drawThree} onClick={divine}/>
+            <div className="Selection-Submit">
+                    <input className='Cate-Button-Submit' type={'submit'} value='Divine' onMouseDown={drawThree} onClick={divine}/>
             </div>
             
         </div>

@@ -1,10 +1,3 @@
-div{
-    display: block;
-    text-align: center;
-    background-color: rgb(136, 125, 177);
-    
-
-}
 
 .Main{
     color: #000;
@@ -22,10 +15,13 @@ div{
 
 .Title{
     color: #000;
+    margin: 1%;
 }
 
 .Sub-Title{
     color: #000;
+    font-size: larger;
+    margin: 1%;
 }
 
 .Card-Div{
@@ -35,36 +31,44 @@ div{
     margin: auto;
     padding: 0.5%;
     border: 3px solid #555;
+    width: 1340px;
     height: fit-content;
 }
 
 #Card-Image-Single{
-    background-color: rgb(170, 136, 161);
+    transition: opacity 0% 3s ease-in;
+    
 }
-#Card-Image-Single:hover .Card-Back{
+#Card-Image-Single:hover{
     flex-shrink: calc(12);
+    animation: card-ani 4s 1;
+    transition: opacity 0% 3s ease-in;
+
 }
 
 #Card-Image{
     display: flex;
     flex-direction: row;
-    margin: auto;
+    margin: 1%;
+    margin-left: 6%;
+    margin-right: 6%;
     width: 282px;
     height: fit-content;
+    animation: fadein 4s 1;
 }
 
 .Card-Info{
-    opacity: 0%;
-    color: #000;
-    float: none;
-    margin-left: -88%;
-    border: 3px solid #555;
-    box-sizing: border-box;
+    display: block;
+    color: #000;   
     height: 400px;
-    width: inherit;
+    width: 282px;
+    margin-right: -100%;
+    
 }
+/*
 .Card-Info:hover{
-    opacity: 0%;
+    visibility: visible;
+    opacity: 60%;
     color: #000;
     float: none;
     margin-left: -88%;
@@ -72,15 +76,11 @@ div{
     box-sizing: border-box;
     height: 400px;
     width: inherit;
-}
+}*/
 
 #ImgC1{
     float: left;
     background-color: aquamarine;
-    animation-name: card-deal;
-    animation-duration: 2s;
-    animation-delay: 0ms;
-    animation-iteration-count: 1;
 
 }
 #ImgC2{
@@ -90,22 +90,24 @@ div{
 }
 #ImgC3{
     float: left;
-    background-color: aquamarine;
+}
+#ImgC3:active{
+    animation: card-deal-3 1s 1; 
 
+}
+#ImgC3:hover{
+    color: beige;
 }
 
 #C1{
     float: left;
-    background-color: aquamarine;
-
+    
 }
 #C2{
     float: left;
-    background-color: aquamarine;
 }
 #C3{
     float: right;
-    background-color: turquoise;
 }
 
 .Img-Cards{
@@ -118,16 +120,11 @@ div{
 }
 .Img-Cards:hover{
     backdrop-filter: black;
-    animation-name: card-ani;
-    animation-duration: 4s;
-    animation-iteration-count:infinite;
     
 }
-.Img-Cards:before{
+.Img-Cards:active{
     backdrop-filter: black;
-    animation-name: card-drop;
-    animation-duration: 4s;
-    animation-iteration-count:infinite;}
+}
 
 
 .Description{
@@ -146,34 +143,27 @@ div{
     border: 3px solid #555;
 }
 
-.Cate-Button{
-    background-color: cornflowerblue;
-}
-
-.Card-Back{
-    background-image: url('../../Resources/Images/Cards/cd-back-ghost.jpg');
-    width: 200px;
-    height: 300px;
-}
-
 /*KEYFRAMES*/
 @keyframes card-ani{
     0%{
-        transform: rotateY(360deg) scale(1);
     }
-    25%{}
+    49%{
+        transform: rotateY(180deg);
+    }
     50%{
-        opacity: 0%;
-        display: block;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        background: url('cd-back-ghost.jpg') no-repeat;
+        content: url(/src/Resources/Images/Cards/cd-back-ghost.jpg);
+       
     }
-    75%{}
+    51%{
+        transform: rotateY(270deg);
+        opacity: 0%;
+    }
     100%{
-        transform: initial;
+        opacity: 0%;
     }
 }
+
+
 @keyframes card-drop{
     0%{
         transform: rotateY(360deg) scale(1);
@@ -183,13 +173,33 @@ div{
     }
 
 }
-@keyframes card-deal{
+@keyframes card-deal-1{
     0%{        
-        transform: translate(260%, -150%);
+        transform: translate(-1000%, 0%);
     }
     100%{
         transform: initial;
     }
 
 }
+@keyframes fadein{
+    0%{        
+        opacity: 0%;
+    }
+    100%{
+        transform: initial;
+    }
+
+}
+@keyframes card-deal-3{
+    0%{        
+        transform: translate(-260%, -150%);
+    }
+    100%{
+        transform: initial;
+    }
+
+}
+
+
 
