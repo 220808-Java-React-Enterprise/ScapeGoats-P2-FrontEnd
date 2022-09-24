@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import InnerAxios from "../Utils/Config/InnerAxios";
-
+import '../Utils/CSS/Signup.css'
 
 
 const Signup = () => {
@@ -61,7 +61,7 @@ const Signup = () => {
         <div className="Signup" id="Signup-Div-Master">
 
            <div className="Signup" id="Signup-Div-Main">
-
+           <video src={require('../Assets/NatureMoon.mp4')} autoPlay loop muted />
                 <h1 >Signup</h1>
                 <br/>
 
