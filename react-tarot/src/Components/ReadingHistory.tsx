@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 import InnerAxios from '../Utils/Config/InnerAxios'
 import { Link } from "react-router-dom";
-import OuterAxios from '../Utils/Config/OuterAxios';
 
 
 const ReadingHistory = () => {
 
-  const [counter,setCounter] = useState(0);
   const [userId, setUserId] = useState("8dab77eb-2689-4b89-bc39-aa104095ec61");
-  const [cardName, setCardName] = useState('Mystery Card');
+
 
   
   useEffect(() => {
@@ -16,6 +14,18 @@ const ReadingHistory = () => {
     loadReadings();
 
   }, [])
+
+  const getUserId = (() => {
+    let userId = localStorage?.userId ?? "8dab77eb-2689-4b89-bc39-aa104095ec61";
+    if( userId !== null && userId !== undefined) {
+      return( userId )
+    }
+    else{
+      console.error("404: userId not found in local storage.");
+      return( "" )
+      
+    }
+  })
 
   async function loadReadings() {
     //event.preventDefault();
@@ -75,7 +85,7 @@ const ReadingHistory = () => {
       //<input type='submit' value='Category'/>
       }
     </div>
-    <table id='Reading-Table'>
+    <table role='test' id='Reading-Table'>
       <caption>Reading History</caption>
       <thead>
         <tr>
@@ -92,7 +102,7 @@ const ReadingHistory = () => {
       <tfoot></tfoot>
 
     </table>
-
+      Tarot
 
     <Link to="/MainPage">Back to MainPage</Link>
     </>

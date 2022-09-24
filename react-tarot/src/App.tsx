@@ -20,7 +20,7 @@ function App() {
 
   return (
     
-      <div>
+      <div role='master'>
      <BrowserRouter>
      <Routes>
 
@@ -41,9 +41,7 @@ function App() {
 
      </Routes>
      </BrowserRouter>
-    
-   
-     
+         
      </div>
 
    
