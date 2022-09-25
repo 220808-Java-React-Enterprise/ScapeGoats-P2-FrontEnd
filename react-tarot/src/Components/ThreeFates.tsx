@@ -145,7 +145,9 @@ const ThreeFates = () => {
     const returnToMain = () => {
         navigate('/MainPage');
     }
-
+    const getHelp =() =>{
+        window.location.href = 'mailto:realityescape2022@gmail.com';
+    }
 
     return(
         <div onClick={placeCard}>
@@ -176,7 +178,7 @@ const ThreeFates = () => {
                 <div className="Navigation" id="Navigation">
                     <input type='submit' value='Save Reading' onClick={saveReading}/>
                     <input type='submit' value='Return to Main' onClick={returnToMain}/>
-                    <input type='submit' value='Seek Consultation'/>
+                    <input type='submit' value='Seek Consultation' onClick={getHelp}/>
                 </div>
             </div>
         </div>

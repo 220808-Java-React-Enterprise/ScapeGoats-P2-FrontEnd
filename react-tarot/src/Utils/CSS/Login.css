@@ -15,12 +15,13 @@
     justify-content: center;
     color:blueviolet;
     font-weight:bold;
+    font-size:larger
 }
 
 button {
 color:blueviolet;
 font-weight: bold;
-
+font-size: x-larger;
 }
 
 .linked > a{

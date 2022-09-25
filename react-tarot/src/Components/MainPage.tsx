@@ -9,7 +9,10 @@ sessionStorage.clear();
 localStorage.clear();
 }
 
-
+function redirect()
+{
+    window.location.href = 'mailto:realityescape2022@gmail.com';
+}
 
 const MainPage = () => {
   return (
@@ -18,7 +21,7 @@ const MainPage = () => {
 
 <video src={require('../Assets/MainWatching.mp4')} autoPlay loop muted />
 <div className="MainLook">
-        <Header title="Reality Escape Cards Main Page" />
+        
         <Link to="/Categ">
         <Button text="Three Fates Divination" />
         </Link>
@@ -27,8 +30,9 @@ const MainPage = () => {
         <Link to="/ReadingHistory">
         <Button text="Reading History" />
         </Link>
-
-        
+        <br></br>
+        <input id="exiting" type="submit" value="Consult" style={{ border: "none",outline: "none", background : "transparent" }} onClick={redirect}/>
+      
         <Link to="/">
 
         <input id="exiting" type="submit" value="Exit" style={{ border: "none",outline: "none", background : "transparent" }} onClick={logOut}/>
