@@ -57,7 +57,7 @@
     margin-left: 6%;
     margin-right: 6%;
     width: 282px;
-    height: fit-content;
+    height: 420px;
     animation: fadein 4s 1;
 }
 
@@ -67,6 +67,7 @@
     height: 400px;
     width: 282px;
     margin-right: -100%;
+    margin-top: 20px;
     text-justify: inter-ideograph;
     
 }
