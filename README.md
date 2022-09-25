@@ -1,4 +1,4 @@
-# P2-ScapeGoats-BackEnd
+# P2-ScapeGoats-FrontEnd
 
 # Reality Escape Cards (Tarot Cards) - Proposal
 
