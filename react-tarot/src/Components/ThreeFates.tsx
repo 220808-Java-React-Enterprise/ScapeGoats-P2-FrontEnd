@@ -167,13 +167,18 @@ const ThreeFates = () => {
         navigate('/MainPage');
     }
 
+    const getConsultants = () => {
+        //Current is random placeholder pyhic page.
+        
+    }
+
 
     return(
-        <div onClick={placeCard}>
+        <div >
             <div className="Main">
                 <div className="Title">Your Three Fates Reading</div>
                 <div className="Sub-Title">{category.id}</div>
-                <div className="Card-Div">
+                <div className="Card-Div" onClick={placeCard}>
                     <div id="Card-Image">
                         <span className="Card-Info" id='C1'>1st Card</span>
                         <div id='Card-Image-Single'>
@@ -199,7 +204,9 @@ const ThreeFates = () => {
                 <div className="Navigation" id="Navigation">
                     <input type='submit' value='Save Reading' onClick={saveReading}/>
                     <input type='submit' value='Return to Main' onClick={returnToMain}/>
-                    <input type='submit' value='Seek Consultation'/>
+                    <a href="https://www.psychicsource.com/phone-psychic-readings?imc=334730&tfn=1.855.502.3000&msclkid=b43b39588e1612b53fee5a68d78652b2&utm_source=bing&utm_medium=cpc&utm_campaign=s_sea_nb_general_psychic_psychic-source_multi_d_c-us_p_lead_bi_en_txt_bing-search-desktop_&utm_term=psychic&utm_content=psychic____multi_txt_general_psychic_">
+                        <input type='submit' value='Seek Consultation' onClick={getConsultants}/>
+                    </a>
                 </div>
             </div>
         </div>

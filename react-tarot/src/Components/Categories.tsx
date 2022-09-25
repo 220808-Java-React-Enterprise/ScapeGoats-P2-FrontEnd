@@ -18,13 +18,10 @@ const cate_pets = new Category( 'PETS', 'Pets', ["how your pet feels about you."
 
 
 const CategoryPannel = () => {
-
-    const [counter, setCounter] = useState(0);
     
     useEffect(() => {
         document.title = "Choose a Category";
-        
-    }, [counter]);
+    }, []);
 
     //const [reading, setReading] = useState({});
 
@@ -64,7 +61,8 @@ const CategoryPannel = () => {
             subTitle.innerHTML = cate;
             showQuestionInput();
         }
-        setCounter((counter) => counter + 1); 
+
+        localStorage.setItem('category', JSON.stringify(category));
     }
 
     const showQuestionInput = (() => {
@@ -78,7 +76,7 @@ const CategoryPannel = () => {
         OuterAxios.get('/random?n=3').then(resp => {            
             
             localStorage.setItem('cardsDrawn', JSON.stringify(resp.data.cards));
-            localStorage.setItem('category', JSON.stringify(category));
+            //localStorage.setItem('category', JSON.stringify(category));
             
 
         })
