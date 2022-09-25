@@ -3,10 +3,11 @@
     display: block;
     background-color: lightslategrey;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 6%;
     padding: 1%;
     width: 500px;
-    height: 500px;
+    height: 600px;
+    border-radius: 10%;
 }
 
 .Cate-Title{
@@ -19,6 +20,7 @@
 .Selection{
     display: block;
     margin: auto;
+    margin-top: 2.5%;
     width: fit-content;
 }
 
@@ -36,6 +38,9 @@
     flex-direction: column;
     width: fit-content;
     height: fit-content;
+}
+.Selection-Submit:hover{
+    display: flex;
 }
 
 .Cate-Button{
@@ -60,10 +65,40 @@
 .Cate-Button-Submit{
     display: block;
 }
+#Question-Div{
+    display: block;
+    margin: auto;
+    margin-top: 6%;
+}
+.Cate-Question{
+    display: flex;
+    width: 300px;
+    flex-basis: content;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: rgb(60, 48, 63);
+    color: azure;
+}
 
 
 /*ANIMATIONS*/
 
-
+@keyframes border-change{
+    0%{
+        border-radius: initial;
+    }
+    25%{
+        border-radius: 20%;
+    }
+    50%{
+        opacity: 10%;
+    }
+    75%{
+        border-radius: 20%;
+    }
+    100%{
+        border-radius: initial;
+    }
+}
 
 

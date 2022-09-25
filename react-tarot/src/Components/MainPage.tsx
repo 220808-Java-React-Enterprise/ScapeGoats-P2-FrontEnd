@@ -1,23 +1,28 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import Header from './Header'
 import '../Utils/CSS/MainPage.css'
- function logOut()
-{
-sessionStorage.clear();
-localStorage.clear();
-}
-
-
 
 const MainPage = () => {
+
+  //Creating useEffect counter for assiting the logout feature.
+  const [counter, setCounter] = useState(2);
+  useEffect(() => {}, [counter])
+
+  function logOut()
+  {
+    sessionStorage.clear();
+    localStorage.clear();
+    setCounter((counter) => counter - 1);
+  }
+
   return (
 
     <div>
 
-<video src={require('../Assets/MainWatching.mp4')} autoPlay loop muted />
-<div className="MainLook">
+      <video src={require('../Assets/MainWatching.mp4')} autoPlay loop muted />
+      <div className="MainLook">
         <Header title="Reality Escape Cards Main Page" />
         <Link to="/Categ">
         <Button text="Three Fates Divination" />

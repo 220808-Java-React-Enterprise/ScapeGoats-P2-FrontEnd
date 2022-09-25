@@ -8,9 +8,8 @@ import User from "../Classes/User";
 
 const ThreeFates = () => {
     
-    var orientation:boolean; 
     var cards:any;
-    var category:any  = JSON.parse(localStorage.category);
+    var category:any = JSON.parse(localStorage.category);
     var description:string ;
     //const USER = new User(localStorage.user.id, localStorage.user.username, localStorage.user.role);
 
@@ -20,7 +19,7 @@ const ThreeFates = () => {
         document.title = "Three Fates Draw";
     
         //Tarot cards has two sets of meanings dependent on the orientaion of the card. This is to simulate that.
-        orientation = 0 == Math.round(Math.random() * 100) % 2 ;
+        
         cards = JSON.parse(localStorage.cardsDrawn);
         
         description = 'In the category of ' + category.name +
@@ -31,7 +30,7 @@ const ThreeFates = () => {
             
             //For testing console.log(counter);
 
-        if(counter != 0) { setCounter((counter) => counter - 1); }
+        if(counter !== 0) { setCounter((counter) => counter - 1); }
     
     }, [counter]);
     
@@ -41,35 +40,56 @@ const ThreeFates = () => {
     const IMAGEBASE = '../Resources/Images/Cards/';
     var cardBack = 'cd-back-ghost.jpg';
 
+    let flag_CardsPlaced: boolean = false;
     
     function placeCard(  ) {
 
-        if(cards!= null) {    
+        if(!flag_CardsPlaced) {
 
-            displayCardInfo( cards, 0, 'C1');
-            displayCardInfo( cards, 1, 'C2');
-            displayCardInfo( cards, 2, 'C3');
+            if(cards!= null) {    
 
-            displayCardDescription();
+                displayCardInfo( cards, 0, 'C1');
+                displayCardInfo( cards, 1, 'C2');
+                displayCardInfo( cards, 2, 'C3');
 
-        }
-        else {
-            alert('No cards have been drawn, how did you get here!');
-            navigate('/');
+                displayCardDescription();
+
+                flag_CardsPlaced = true;
+
+            }
+            else {
+                alert('No cards have been drawn, how did you get here!');
+                navigate('/');
+            }
+
         }
 
     }
 
+    function getOrientation() { 
+        let orientaion:boolean = 0 === Math.round(Math.random() * 100) % 2 ;
+        return( orientaion ) 
+    }
+
+    let setCardOrientation = ((orientaion: boolean, id: string) => {
+        let card = document.getElementById(id);
+        if(card !== null ) {
+            if(!orientaion){ card.style.transform = 'rotate(180deg)'; }
+            else{ card.style.transform = 'rotate(0deg)'; }
+            
+        }
+    })
 
     function displayCardInfo( cards : any[], x : number, id : string ) {
         
             var c = cards[x];
             var card = document.getElementById(id);
             var meanings: string[] = c.meaning_up;
+            var orientaion = getOrientation();
 
-            if( !orientation ) { meanings = c.meaning_rev; }
+            if( !orientaion ) { meanings = c.meaning_rev; }
             
-            displayCardFace( c.name_short + '.jpg', 'Img' + id, c.name);
+            displayCardFace( c.name_short + '.jpg', 'Img' + id, c.name, orientaion);
 
             if(card != null) { 
                 card.innerHTML= '<h4>' + c.name + '</h4>\n' +
@@ -82,12 +102,13 @@ const ThreeFates = () => {
 
     }
 
-    function displayCardFace(imageFile: string, id: string, altText: string) {
+    function displayCardFace(imageFile: string, id: string, altText: string, orientaion: any) {
 
         let place: HTMLImageElement = document.getElementById(id) as HTMLImageElement;
         if(place != null) { 
             place.src = IMAGEBASE + imageFile;
             place.alt = altText;
+            setCardOrientation(orientaion, id);
 
         }
 
@@ -154,25 +175,27 @@ const ThreeFates = () => {
                 <div className="Sub-Title">{category.id}</div>
                 <div className="Card-Div">
                     <div id="Card-Image">
-                        <span className="Card-Info" id='C1'>Card 1</span>
+                        <span className="Card-Info" id='C1'>1st Card</span>
                         <div id='Card-Image-Single'>
                             <img id="ImgC1" className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
                     </div>
                     <div id="Card-Image">
-                        <span className="Card-Info" id='C2'>Card 2</span>
+                        <span className="Card-Info" id='C2'>2nd Card</span>
                         <div id='Card-Image-Single'>
                             <img id='ImgC2' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
                     </div>
                     <div id="Card-Image">
-                        <span className="Card-Info" id='C3'>Card 3</span>
+                        <span className="Card-Info" id='C3'>3rd Card</span>
                         <div id='Card-Image-Single'>
                             <img id='ImgC3' className='Img-Cards' src={require('../Resources/Images/Cards/' + cardBack)} alt='This is a card.'/>
                         </div>
                     </div>
                 </div>
-                <div className="Description" id="Description">Desc</div>
+                <div className="Description" id="Description">The past is irriversable, but choice lies in the present, so the future is up to you.
+                    <br/>Just as the meanings of the cards are set, but the meaning of the reading is up to you to interpret.
+                </div>
                 <div className="Navigation" id="Navigation">
                     <input type='submit' value='Save Reading' onClick={saveReading}/>
                     <input type='submit' value='Return to Main' onClick={returnToMain}/>

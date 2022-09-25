@@ -1,5 +1,6 @@
 body{
     background-color: rgb(136, 125, 177);
+    /*animation: background-change 10s infinite;*/
     
 }
 #root{
@@ -50,18 +51,46 @@ h3{
     width: fit-content;
     height: fit-content;
 }
+h4{
+    margin: auto;
+    margin-bottom: -1%;
+    width: fit-content;
+    height: fit-content;
+
+}
 
 input{
-    display: inline;
     border-radius: 5px;
-    margin: 2px;
+    background-color: rgb(238, 219, 246);
+    color: rgb(7, 57, 57);
 }
 
 table{
+    background-color: lightslategrey;
+}
+.table-bordered{
+    border-radius: 20px;
+}
+
+.ReadingHistory-Div-Master{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2.5%;
+    width: 94%;
+    height: 94%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background-color: lightslategrey;
+    border-radius: 20px;
+}
+#Reading-Table{
     display: block;
     margin: auto;
-    width: fit-content;
+    margin-top: 2.5%;
     height: fit-content;
+    border-radius: 10px;
+
 }
 
 .Background{
@@ -121,3 +150,27 @@ table{
 }
 
 
+@keyframes background-change{
+    0%{
+        opacity: initial;
+        background-image: url("https://i.pinimg.com/originals/29/57/d9/2957d99bf220c6a37bac7702959736cc.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    25%{
+        opacity: 50%;
+    }
+    50%{
+       opacity: initial;
+       background-image: url("https://i.pinimg.com/originals/29/57/d9/2957d99bf220c6a37bac7702959736cc.gif");
+       background-repeat: no-repeat;
+       background-size: cover;
+    }
+    75%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: initial;
+
+    }
+}

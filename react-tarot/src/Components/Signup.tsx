@@ -62,7 +62,8 @@ const Signup = () => {
 
            <div className="Signup" id="Signup-Div-Main">
            <video src={require('../Assets/NatureMoon.mp4')} autoPlay loop muted />
-                <h1 >Create Account</h1>
+                <br/>
+                <h1 id="Signup-Header">Create Account</h1>
                 <br/>
 
                 <form className="Signup" id="Signup-Form" onSubmit={submit} name='Signup'>                   
