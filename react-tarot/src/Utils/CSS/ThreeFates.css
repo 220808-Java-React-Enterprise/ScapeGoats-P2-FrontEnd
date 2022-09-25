@@ -7,6 +7,7 @@
     justify-content: center;
     position: relative;
     margin: auto;
+    margin-top: 2.5%;
     padding: 0.5%;
     border: 3px solid #555;
     border-radius: 10px;
@@ -36,12 +37,15 @@
 }
 
 #Card-Image-Single{
+    display: block;
+    width: auto;
+    height: auto;
+    box-shadow: 10px 5px 5px grey;
     transition: opacity 0% 3s ease-in;
     
 }
 #Card-Image-Single:hover{
-    flex-shrink: calc(12);
-    animation: card-ani 4s 1;
+    animation: card-ani 12s 1;
     transition: opacity 0% 3s ease-in;
 
 }
@@ -53,7 +57,7 @@
     margin-left: 6%;
     margin-right: 6%;
     width: 282px;
-    height: fit-content;
+    height: 420px;
     animation: fadein 4s 1;
 }
 
@@ -63,6 +67,8 @@
     height: 400px;
     width: 282px;
     margin-right: -100%;
+    margin-top: 20px;
+    text-justify: inter-ideograph;
     
 }
 /*
@@ -80,12 +86,10 @@
 
 #ImgC1{
     float: left;
-    background-color: aquamarine;
 
 }
 #ImgC2{
     float: left;
-    background-color: aquamarine;
 
 }
 #ImgC3{
@@ -115,7 +119,6 @@
     display: flexbox;
     height: 400px;
     width: 282px;
-    box-shadow: 10px 5px 5px grey;
     background-color: #000;
 }
 .Img-Cards:hover{
@@ -137,24 +140,26 @@
 }
 
 .Navigation{
-    color: #000;
     margin: auto;
+    margin-bottom: 2.5%;
     padding: 0.5%;
     border: 3px solid #555;
+    width: 1340px;
 }
 
 /*KEYFRAMES*/
 @keyframes card-ani{
     0%{
+        width: auto;
     }
-    49%{
+    19%{
         transform: rotateY(180deg);
     }
-    50%{
+    20%{
         content: url(/src/Resources/Images/Cards/cd-back-ghost.jpg);
        
     }
-    51%{
+    21%{
         transform: rotateY(270deg);
         opacity: 0%;
     }

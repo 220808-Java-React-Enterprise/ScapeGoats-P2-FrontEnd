@@ -22,6 +22,13 @@ const handleConsultChange = (event : any) => {
 
   });
 
+  function emailConsult({ consult }: any)
+  {
+    if (consult='Cthulu') {
+      window.location.href = 'mailto:realityescape2022@gmail.com';
+    }
+  
+  }
   return (
     <div>
         <Header title="Consultants Page"/>
@@ -37,7 +44,7 @@ const handleConsultChange = (event : any) => {
         </select>
       </label>
   
-     <a href="mailto:"/>
+      <input id="exiting" type="submit" value="Consult" style={{ border: "none",outline: "none", background : "transparent" }} onClick={emailConsult}/>
 
 <br></br>
     <Link to="/MainPage">

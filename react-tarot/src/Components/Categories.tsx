@@ -59,14 +59,24 @@ const CategoryPannel = () => {
 
         if(subTitle !== null) {
             subTitle.innerHTML = cate;
+            showQuestionInput();
         }
+
+        localStorage.setItem('category', JSON.stringify(category));
     }
+
+    const showQuestionInput = (() => {
+        let qInput = document.getElementById('Question-Div');
+        if(qInput !== null) {
+            qInput.hidden = false;
+        }
+    })
 
     function drawThree() {
         OuterAxios.get('/random?n=3').then(resp => {            
             
             localStorage.setItem('cardsDrawn', JSON.stringify(resp.data.cards));
-            localStorage.setItem('category', JSON.stringify(category));
+            //localStorage.setItem('category', JSON.stringify(category));
             
 
         })
@@ -83,8 +93,9 @@ const CategoryPannel = () => {
         <div className="Pannel">
 
             <div className="Cate-Title">
-                <h1>Categories</h1>
-                <h3 id="Cate-SubTitle">Choose a Category!</h3>
+                <h1>What Do You Want To Know About?</h1>
+                <br/>
+                <h3 id="Cate-SubTitle">Choose a Category.</h3>
             </div>
             <div className="Selection">
                 <div className='Selection-Inner'>
@@ -97,8 +108,14 @@ const CategoryPannel = () => {
                 </div>
             </div>
 
-            <div className="Selection-Submit">
-                    <input className='Cate-Button-Submit' type={'submit'} value='Divine' onMouseDown={drawThree} onClick={divine}/>
+
+            <div id="Question-Div" hidden={true}>
+                <h4>What do you want to know?</h4>
+                <input className="Cate-Question" type={'text'} placeholder='Enter your query.' />
+                <br/>
+                <div className="Selection-Submit">
+                        <input className='Cate-Button-Submit' type={'submit'} value='Divine' onMouseDown={drawThree} onClick={divine}/>
+                </div>
             </div>
             
         </div>
